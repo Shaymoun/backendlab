@@ -2,6 +2,8 @@ package com.example.backendlab;
 
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Product {
@@ -16,6 +18,9 @@ public class Product {
     @ManyToOne
     @JoinColumn(name="category_id")
     private Category category;
+
+    @OneToMany(mappedBy = "product", cascade = CascadeType.ALL)
+    private List<ProductDetails> details = new ArrayList<>();
 
     public Integer getId() {
         return id;
@@ -47,6 +52,10 @@ public class Product {
 
     public void setCategory(Category category) {
         this.category = category;
+    }
+
+    public void addDetail(String name, String value){
+        this.details.add(new ProductDetails(name,value,this));
     }
 
 }

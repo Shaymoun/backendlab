@@ -28,7 +28,7 @@ public class BrandController {
     @PostMapping("/brands/save")
     public String saveBrand(Brand brand){
         brandRepo.save(brand);
-        return "redirect:/";
+        return "redirect:/brands";
     }
 
     @GetMapping("/brands")

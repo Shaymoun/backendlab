@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @Controller
@@ -27,7 +28,13 @@ public class ProductController {
         return "product_form";
     }
     @PostMapping("/products/save")
-    public String saveProduct(Product product){
+    public String saveProduct(Product product, HttpServletRequest request){
+        String[] detailNames = request.getParameterValues("detailName");
+        String[] detailValues = request.getParameterValues("detailValue");
+
+        for (int i = 0; i<detailNames.length; i++) {
+            product.addDetail(detailNames[i],detailValues[i]);
+        }
         productRepo.save(product);
         return "redirect:/products";
     }
