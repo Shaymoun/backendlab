@@ -29,4 +29,11 @@ public class BrandController {
         brandRepo.save(brand);
         return "redirect:/";
     }
+
+    @GetMapping("/brands")
+    public String listBrands(Model model){
+        List<Brand> listBrands = brandRepo.findAll();
+        model.addAttribute("listBrands",listBrands);
+        return "brands";
+    }
 }
