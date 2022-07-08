@@ -19,6 +19,13 @@ public class ProductDetails {
     @JoinColumn(name = "product_id")
     private Product product;
 
+    public ProductDetails(Integer id, String name, String value, Product product) {
+        this.id = id;
+        this.name = name;
+        this.value = value;
+        this.product = product;
+    }
+
     public ProductDetails(){
 
     }
@@ -58,5 +65,10 @@ public class ProductDetails {
 
     public void setProduct(Product product) {
         this.product = product;
+    }
+
+    @Override
+    public String toString() {
+        return name + '=' +value;
     }
 }
