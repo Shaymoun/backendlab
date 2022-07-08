@@ -66,4 +66,9 @@ public class ProductController {
         productRepo.deleteById(id);
         return "redirect:/products";
     }
+
+    @GetMapping("/error")
+    public String errorPage(){
+        return "error";
+    }
 }
