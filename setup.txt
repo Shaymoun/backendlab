@@ -1,7 +1,6 @@
-Punkty 1-3 wykonać w terminalu.
+1. Open terminal
+2.docker pull mysql
+3.docker run --name package-sql -e MYSQL_ROOT_PASSWORD=12345 -d -p 3306:3306
+4.java -jar backendlab.jar
 
-1.docker pull mysql
-2.docker run --name package-sql -e MYSQL_ROOT_PASSWORD=12345 -d -p 3306:3306
-3.java -jar backendlab.jar
-
-4.Utwórz bazę danych z kodu zawartego w database.txt w MySQL Workbench. Hasło do bazy danych: 12345
+5.Create database from file database.txt in MySQL Workbench. Db password: 12345
