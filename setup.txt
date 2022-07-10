@@ -1,4 +1,4 @@
-1. Open terminal
+1.Open terminal
 2.docker pull mysql
 3.docker run --name package-sql -e MYSQL_ROOT_PASSWORD=12345 -d -p 3306:3306
 4.java -jar backendlab.jar
