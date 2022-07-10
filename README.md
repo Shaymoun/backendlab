@@ -20,5 +20,3 @@ Instructions in setup.txt
 - MySQL Database
 - Lombok
 
-## License
-[MIT](https://choosealicense.com/licenses/mit/)
